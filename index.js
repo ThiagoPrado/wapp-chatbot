@@ -1,15 +1,36 @@
 // index.js
 
+// Polyfill para Object.hasOwn (se ainda estiver usando Node antigo, pode remover após a atualização)
+if (!Object.hasOwn) {
+  Object.hasOwn = (obj, prop) =>
+    Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
 require('dotenv').config();
 const express = require('express');
 const qrcode = require('qrcode-terminal');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
-// Importa funções e estados
+// Importa funções e estados dos bots
 const { startMayaFlow, conversationState: mayaState } = require('./bots/maya');
 const { startSophieFlow, conversationState: sophieState } = require('./bots/sophieBot');
 
-async function initWhatsApp() {
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Healthcheck endpoint
+app.get('/health', (_req, res) => {
+  res.json({ status: 'ok' });
+});
+
+// Starta o servidor Express
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚑 Health endpoint rodando em http://0.0.0.0:${PORT}/health`);
+  // Só inicializa o client do WhatsApp depois que o Express estiver ativo
+  initWhatsappClient();
+});
+
+async function initWhatsappClient() {
   const client = new Client({
     authStrategy: new LocalAuth({ clientId: 'wapp-chatbot' }),
     puppeteer: {
@@ -74,22 +95,3 @@ async function initWhatsApp() {
 
   client.initialize();
 }
-
-function initHealthServer() {
-  const app = express();
-  const PORT = process.env.PORT || 3000;
-
-  // Healthcheck simples
-  app.get('/health', (req, res) => {
-    // Aqui você pode adicionar checagens de DB, etc.
-    return res.status(200).json({ status: 'ok' });
-  });
-
-  app.listen(PORT, () => {
-    console.log(`🚑 Health endpoint rodando em http://localhost:${PORT}/health`);
-  });
-}
-
-// Inicializa ambos
-initHealthServer();
-initWhatsApp().catch(err => console.error(err));
