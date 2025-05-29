@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  chatbot:
+    build: .
+    container_name: wapp-chatbot
+    restart: unless-stopped
+    environment:
+      # 🔒 Use variáveis reais ou .env (docker-compose suporta env_file)
+      - PORT=3000
+      - NODE_ENV=production
+    volumes:
+      # Monta a pasta bots/data dentro do container para persistir o SQLite
+      - sqlite_data:/app/bots/data
+      # Mantém as credenciais do WhatsApp fora da imagem
+      - wwebjs_auth:/app/.wwebjs_auth
+      - wwebjs_cache:/app/.wwebjs_cache
+    ports:
+      - "3000:3000"   # host:container  (ajuste porta externa se quiser)
+    # Se quiser rodar em background, use `docker compose up -d`
+    # Caso precise passar o QR no host, mantenha em modo foreground
+
+volumes:
+  sqlite_data:
+  wwebjs_auth:
+  wwebjs_cache:

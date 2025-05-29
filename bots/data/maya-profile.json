@@ -1,0 +1,19 @@
+{
+  "nome": "Thiago",
+  "contato": {
+    "telefone": "1298850-0230",
+    "email": "thiagoprado17@hotmail.com"
+  },
+  "nivel": "Gerente",
+  "area": "Recrutamento e seleção",
+  "produto_negocio": "digital",
+  "tecnologias": "grande experiencia com recrutamento e seleção de profissionais de tecnologia",
+  "experiencias": "aumento de 100% na contratação de dev",
+  "formacao": "psicologia",
+  "disponibilidade": "integral",
+  "tipo_vaga": "PJ",
+  "modelo_contratacao": "PJ",
+  "salario": "R$20000",
+  "linkedin": "",
+  "curriculo_pdf": "📎 Aguardando envio manual (iremos importar depois)"
+}

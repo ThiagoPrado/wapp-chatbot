@@ -1,0 +1,30 @@
+{
+  "name": "wapp-chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "^5.0.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "https-proxy-agent": "^7.0.6",
+    "joi": "^17.13.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "pino": "^9.7.0",
+    "prompt-sync": "^4.2.0",
+    "puppeteer": "^24.9.0",
+    "qrcode-terminal": "^0.12.0",
+    "sqlite3": "^5.1.7",
+    "whatsapp-web.js": "^1.28.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

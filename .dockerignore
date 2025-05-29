@@ -1,0 +1,9 @@
+node_modules
+bots/src/utils/Models/Seeds
+.wwebjs_auth
+.wwebjs_cache
+auth_info
+candidatos.csv
+npm-debug.log
+.git
+*.md

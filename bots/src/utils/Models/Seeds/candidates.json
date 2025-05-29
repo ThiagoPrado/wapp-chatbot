@@ -1,0 +1,38 @@
+[
+  {
+    "nome": "Ana Martins",
+    "telefone": "11988887777",
+    "email": "ana.martins@example.com",
+    "nivel": "Pleno",
+    "area": "Back-end",
+    "produto_negocio": "E-commerce",
+    "tecnologias": "Node.js,Express,PostgreSQL",
+    "experiencias": "4",
+    "formacao": "Engenharia da Computação",
+    "disponibilidade": "Imediata",
+    "tipo_vaga": "CLT",
+    "modelo_contratacao": "Híbrido",
+    "salario": "12000",
+    "linkedin": "https://linkedin.com/in/anamartins",
+    "cidade": "São Paulo-SP",
+    "resumo": "Dev back-end focada em APIs de alta performance."
+  },
+  {
+    "nome": "Bruno Alves",
+    "telefone": "21997776655",
+    "email": "bruno.alves@example.com",
+    "nivel": "Sênior",
+    "area": "Data Science",
+    "produto_negocio": "Fintech",
+    "tecnologias": "Python,Pandas,Scikit-Learn",
+    "experiencias": "6",
+    "formacao": "Ciência da Computação",
+    "disponibilidade": "30 dias",
+    "tipo_vaga": "PJ",
+    "modelo_contratacao": "Remoto",
+    "salario": "18000",
+    "linkedin": "https://linkedin.com/in/brunoalves",
+    "cidade": "Rio de Janeiro-RJ",
+    "resumo": "Cientista de dados especializado em risco de crédito."
+  }
+]
